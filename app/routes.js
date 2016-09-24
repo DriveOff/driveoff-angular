@@ -7,24 +7,11 @@ function($stateProvider, $urlRouterProvider) {
       url: '',
       views: {
         'main': {
-          templateUrl: 'components/slider/_index.html',
-          controller: 'SliderCtrl as slider',
-        },
-        '': {
-          templateUrl: 'components/companies/_index_finished.html',
-          controller: 'CompaniesCtrl as home',
+          templateUrl: 'components/friends/_index.html',
+          controller: 'FriendsCtrl as myFriends',
           resolve: {
-            companiesPromise: function(companyFactory) {
-            return companyFactory.ensureCompanies();
-            }
-          }
-        },
-        'second': {
-          templateUrl: 'components/reps/_index.html',
-          controller: 'AboutUsCtrl as about',
-          resolve: {
-            repsPromise: function(aboutUs) {
-              return aboutUs.ensureReps();
+            friendsPromise: function(friendsFactory) {
+              return friendsFactory.ensureFriends();
             }
           }
         },

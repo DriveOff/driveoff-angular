@@ -1,5 +1,11 @@
 /* app css stylesheet */
 
+
+/*
+ * Please do not change the version of Foundation - Angular JS module depends
+ * up on it. These are overwriting some values.
+ */
+
 /*
  * Color Key
  *
@@ -121,15 +127,19 @@ textarea {
 
 /* Buttons */
 
-.button.expanded {
-  width: 100%;
-}
-
 .button {
   border-radius: 3px;
   background-color: #3498db;
   letter-spacing: 0.05rem;
   text-transform: uppercase;
+}
+
+.button.expanded {
+  width: 100%;
+}
+
+.button.on {
+  background-color: #1abc9c;
 }
 
 .success, .button.success {
@@ -204,7 +214,7 @@ ul.off-canvas-list li a {
 }
 
 /* Helpers */
-/* Please do not change the version of Foundation - Angular JS module depends up on it.  These are overwriting some values */
+
 .d-reverse-icon {
   background-color: white;
 }
@@ -242,7 +252,7 @@ ul.off-canvas-list li a {
   color: #fff;
 }
 
-/* Home & Login*/
+/* Home & Login */
 
 .home .main-section, .login .main-section {
   background-position: center;

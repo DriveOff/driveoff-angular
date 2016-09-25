@@ -9,7 +9,7 @@ function rewardsFactory($http, $q, $filter, profileFactory){
     points: profileFactory.points
   }
   
-  var postURL = 'https://driveoff.herokuapp.com/redemptions/new';
+  var postURL = 'https://driveoff.herokuapp.com/redemptions';
   // var getURL = 'https://driveoff.herokuapp.com/rewards'
   
   var getURL = 'https://driveoff.herokuapp.com/rewards'
@@ -46,7 +46,7 @@ function rewardsFactory($http, $q, $filter, profileFactory){
     return $http.post(postURL, reward).success(function(data) {
       if (!data.error){
         me.rewards = me.rewards.splice(id, 1);
-        profileFactory.points = profileFactory.points - reward.points;
+        profileFactory.points = profileFactory.points - reward.c;
         me.points = profileFactory.points;
       }
     })

@@ -2,4 +2,5 @@
 Main.controller('ProfileCtrl', ['profileFactory', function (profileFactory) {
   this.test = "Hello World!";
   this.profile = profileFactory;
+  this.updateProfile = profileFactory.updateProfile;
 }])

@@ -1,4 +1,4 @@
-<h1 class="text-center margin30">Register</h1>
+<h1 class="text-center margin30">Update Your Profile Information</h1>
 
 <div id="error-messages" class="error in registerCtrl.errors">
   <p style="color:red;">{{error}}</p>
@@ -8,62 +8,49 @@
 <form ng-submit="registerCtrl.register();">
   <fieldset>
     <div class="row">
-      <div class="large-4 columns">
+      <div class="small-12 columns">
         <label for="user_name">Name</label>
         <input id="user_name" name="user[name]" type="text" placeholder="Name" required>
       </div>
-
     </div>
+    
     <div class="row">
-      <div class="large-4 columns">
+      <div class="small-12 columns">
         <label for="user_email">Email</label>
         <input id="user_email" name="user[email]" type="text" placeholder="Email" required>
       </div>
     </div>
-
+    
     <div class="row">
-      <div class="large-4 columns">
-        <label for="user_password">Password</label>
-        <input id="user_password" name="user[password]" type="password" placeholder="Enter password" required>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="large-4 columns">
-        <label for="user_password">Password Confirmation</label>
-        <input id="user_password_confirmation" name="user[password_confirmation]" type="password" placeholder="Enter password confirmation" onChange="registerCtrl.validatePassword();" required>
-      </div>
-    </div>
-    <div class="row">
-      <div class="large-4 columns">
+      <div class="small-12 columns">
         <label for="user_avatar">Profile Picture</label>
         <input id="user_avatar" name="user[avatar]" type="file">
       </div>
     </div>
     
     <div class="row">
-      <div class="large-4 columns">
+      <div class="small-12 columns">
         <label for="user_city">City</label>
         <input id="user_city" name="user[city]" type="text" placeholder="City" required>
       </div>
     </div>
     
     <div class="row">
-      <div class="large-4 columns">
+      <div class="small-12 columns">
         <label for="user_state">State</label>
         <input id="user_state" name="user[state]" type="text" placeholder="State" maxlength="2" required>
       </div>
     </div>
     
     <div class="row">
-      <div class="large-4 columns">
+      <div class="small-12 columns">
         <label for="user_zip_code">Zip Code</label>
         <input id="user_zip_code" name="user[zip_code]" type="text" placeholder="Zip Code" required>
       </div>
     </div>
     
     <div class="row">
-      <div class="large-4 columns">
+      <div class="small-12 columns">
         <label for="user_gender">Gender</label>
         <select id="user_gender" name="user[gender]" required>
           <option value="1">Male</option>
@@ -74,8 +61,8 @@
     </div>
     
     <div class="row">
-      <div class="large-4 columns">
-        <a class="button expanded" href="#">Sign Up</a>
+      <div class="small-12 columns">
+        <a class="button expanded" href="#">Update Profile</a>
       </div>
 
   </fieldset>

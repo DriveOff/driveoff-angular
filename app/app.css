@@ -23,11 +23,40 @@
   content: "|";
   padding-right: 0.3em;
 }
-
+/*Wendy's CSS*/
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Open Sans', sans-serif;
 }
 
 p {
   font-family: 'Roboto', sans-serif;
+}
+/*Please do not change the version of Foundation - Angular JS module depends up on it.  These are overwriting some values*/
+.button.expanded {
+  width: 100%;
+}
+
+.button {
+  background-color: #222;
+}
+
+.tab-bar {
+  background-color: #222;
+}
+
+.d-reverse-icon {
+  background-color: white;
+}
+
+.margin30 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  min-height: 50px; /* choose any height */
 }

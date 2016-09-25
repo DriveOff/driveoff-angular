@@ -2,15 +2,14 @@
 Nav.controller('NavCtrl', ['$location', '$scope', 'profileFactory', function NavCtrl($location, $scope, profileFactory) {
   this.page = $location.path();
   
-  
   /* Add class to body */
   if (this.page == '') {
-    this.state_name = 'home';
+    var state_name = 'home';
   } else {
-    this.state_name = this.page.replace(/\//g, '');
+    var state_name = this.page.replace(/\//g, '');
   }
   
-  $('body').addClass(this.state_name);
+  $('body').addClass(state_name);
   
   /* Sticky footer */
   var $window = $(window),

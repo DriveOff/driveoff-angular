@@ -1,7 +1,9 @@
 Main.config([
 '$stateProvider',
 '$urlRouterProvider',
-function($stateProvider, $urlRouterProvider) {
+'$httpProvider',
+function($stateProvider, $urlRouterProvider, $httpProvider) {
+  
   $stateProvider
     .state('home', {
       url: '',
@@ -25,7 +27,6 @@ function($stateProvider, $urlRouterProvider) {
 
     .state('rewards', {
       url: '/rewards',
-      // template: 'test'
       templateUrl: 'components/rewards/_index.html',
       controller: 'RewardsCtrl as myRewards',
       resolve: {
@@ -37,66 +38,31 @@ function($stateProvider, $urlRouterProvider) {
     
     .state('trip', {
       url: '/trip',
-      // template: 'test'
       templateUrl: 'components/trip/_index.html',
       controller: 'TripCtrl as myTrip'
     })
+
+    .state('login', {
+      url: '/login',
+      templateUrl: 'components/auth/login/_index.html',
+      controller: 'LoginCtrl as Login'
+    })
     
-    //
-    // .state('trips', {
-    //   url: '/companies',
-    //   views: {
-    //     'main': {
-    //       templateUrl: 'components/google_map/_index.html',
-    //       controller: 'MapAllCtrl as map',
-    //       resolve: {
-    //         companiesPromise: function(companyFactory) {
-    //         return companyFactory.ensureCompanies();
-    //         }
-    //       }
-    //     },
-    //     'second': {
-    //       templateUrl: 'components/companies/_index_finished.html',
-    //       controller: 'CompaniesCtrl as home',
-    //       resolve: {
-    //         companiesPromise: function(companyFactory) {
-    //         return companyFactory.ensureCompanies();
-    //         }
-    //       }
-    //     }
-    //   }
-    // })
-    //
-    // .state('login', {
-    //   url: '/login',
-    //   views: {
-    //     'main': {
-    //       templateUrl: 'components/google_map/_index.html',
-    //       controller: 'MapAllCtrl as map',
-    //       resolve: {
-    //         companiesPromise: function(companyFactory) {
-    //         return companyFactory.ensureCompanies();
-    //         }
-    //       }
-    //     },
-    //     'second': {
-    //       templateUrl: 'components/companies/_index_finished.html',
-    //       controller: 'CompaniesCtrl as home',
-    //       resolve: {
-    //         companiesPromise: function(companyFactory) {
-    //         return companyFactory.ensureCompanies();
-    //         }
-    //       }
-    //     }
-    //   }
-    // })
+    .state('register', {
+      url: '/register',
+      templateUrl: 'components/auth/register/_index.html',
+      controller: 'RegisterCtrl as Register'
+    })
 
     .state('page-not-found', {
       url: '/page-not-found',
       templateUrl: 'error.html'
     })
 
-  // $httpProvider.interceptors.push('AuthInterceptor'); 
- $urlRouterProvider.otherwise('/page-not-found');
 
+    $urlRouterProvider.otherwise('/page-not-found');
+ 
+ // when authentication is working, this is used to append authentication token with every request
+ // also redirects to login
+    $httpProvider.interceptors.push('AuthInterceptor');
 }]);

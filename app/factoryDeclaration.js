@@ -1,3 +1,5 @@
+Main.factory('AuthInterceptor', AuthInterceptor);
+Main.factory('Auth', Auth);
 Main.factory('friendsFactory', friendsFactory);
 Main.factory('findFriendsFactory', findFriendsFactory);
 Main.factory('rewardsFactory', rewardsFactory);

@@ -6,21 +6,26 @@
   <title>Drive Off</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.css" />
-  <link rel="stylesheet" href="app.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/foundation.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+
+  <link rel="stylesheet" href="app.css">
+
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation-essential/6.2.2/js/vendor/jquery.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-animate.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-foundation/0.8.0/mm-foundation.min.js"></script>
+  <script src="http://pineconellc.github.io/angular-foundation/mm-foundation-tpls-0.8.0.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.0/angular-sanitize.min.js"></script>
-  <!-- Google maps -->
+  
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/plugins/foundation.offcanvas.js"></script>
+  
   
   <!-- font awesome for icons -->
 </head>
@@ -29,26 +34,59 @@
 
 <body ng-app="Main">
         <div ng-controller="NavCtrl as nav">
-            Nav
+                <div class="off-canvas-wrap">
+                    <div class="inner-wrap">
+                        <nav class="tab-bar">
+                            <section class="right-small">
+                                <a class="right-off-canvas-toggle menu-icon" ><span></span></a>
+                            </section>
+
+                            <section class="middle tab-bar-section">
+                                <h1 class="title">Drive Off</h1>
+                            </section>
+
+
+                        </nav>
+
+                        <aside class="right-off-canvas-menu">
+                            <ul class="off-canvas-list">
+                                <li><a href="#/trip">New Trip</a></li>
+                                <li><a href="#/friends">Friends</a></li>
+                                <li><a href="#/rewards">Rewards</a></li>
+                            </ul>
+                        </aside>
+                       
+                        <section class="main-section">
+                            <div class="small-12 columns">
+                                <h1>How to use</h1>
+                                <p>Just use the standard layout for an offcanvas page as documented in the <a href="http://foundation.zurb.com/docs/components/offcanvas.html">foundation docs</a></p>
+                                <p>As long as you include mm.foundation.offcanvas it should simply work</p>
+                            </div>
+                        </section>
+
+                        <a class="exit-off-canvas"></a>
+                    </div>
+                </div>
+            
         </div><!-- end of nav -->
-
-            <div id="ui-views">
-
-                <ui-view></ui-view>
+          <div class="main-section">
+            <div class="row">
+                <ui-view class="small-12 columns"></ui-view>
             </div>
+          </div>
 
         
 
 
 
         <footer id="footer" class="">
-            <div class="container">
+            <div class="main-section">
 
                 <div class="row">
-                    <div class="col-md-3 col-sm-6 margin30"> </div>
+                    <div class="medium-3 small-6 margin30"> </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12 text-center">
+                    <div class="medium-12 text-center">
                         <div class="footer-btm">
 
                        </div>

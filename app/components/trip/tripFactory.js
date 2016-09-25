@@ -13,13 +13,14 @@ function tripFactory($http, $q, coordFactory, calculateDistanceFactory, profileF
     user_id: 0
   }
   
-  var getCurrentTime() {
+  var postTripURL = 'https://driveoff.herokuapp.com/trips';
+  
+  
+  var getCurrentTime = function () {
     var d = new Date();
     return d.getTime();
   }
-  
-  var postTripURL = 'https://driveoff.herokuapp.com/trips';
-  
+    
   //processes the miles and minutes for the trip
   //
   // returns nothing

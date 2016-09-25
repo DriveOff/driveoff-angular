@@ -3,7 +3,7 @@
 // $http - angular Dependency so I can make an ajax call
 //
 // returns an object with the data
-function friendFetch($http, $q){
+function friendsFactory($http, $q){
   var me = {
     friends: []
   }

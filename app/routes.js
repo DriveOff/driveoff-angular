@@ -1,101 +1,103 @@
-Agstock.config([
+Main.config([
 '$stateProvider',
 '$urlRouterProvider',
 function($stateProvider, $urlRouterProvider) {
   $stateProvider
-    .state('sign-in', {
-      url: '',
-      views: {
-        'main': {
-          templateUrl: 'components/friends/_index.html',
-          controller: 'FriendsCtrl as myFriends',
-          resolve: {
-            friendsPromise: function(friendsFactory) {
-              return friendsFactory.ensureFriends();
-            }
-          }
-        },
-      }
-    })
-
     .state('friends', {
-      url: '/companies',
-      views: {
-        'main': {
-          templateUrl: 'components/google_map/_index.html',
-          controller: 'MapAllCtrl as map',
-          resolve: {
-            companiesPromise: function(companyFactory) {
-            return companyFactory.ensureCompanies();
-            }
-          }
-        },
-        'second': {
-          templateUrl: 'components/companies/_index_finished.html',
-          controller: 'CompaniesCtrl as home',
-          resolve: {
-            companiesPromise: function(companyFactory) {
-            return companyFactory.ensureCompanies();
-            }
-          }
+      url: '/friends',
+      // template: '<h1>my friends </h1>',
+      templateUrl: 'components/friends/_index.html',
+      controller: 'FriendsCtrl as myFriends',
+      resolve: {
+        friendsPromise: function(friendsFactory) {
+          return friendsFactory.ensureFriends();
         }
       }
-    })    
-
-    .state('rewards', {
-      url: '/companies',
-      views: {
-        'main': {
-          templateUrl: 'components/google_map/_index.html',
-          controller: 'MapAllCtrl as map',
-          resolve: {
-            companiesPromise: function(companyFactory) {
-            return companyFactory.ensureCompanies();
-            }
-          }
-        },
-        'second': {
-          templateUrl: 'components/companies/_index_finished.html',
-          controller: 'CompaniesCtrl as home',
-          resolve: {
-            companiesPromise: function(companyFactory) {
-            return companyFactory.ensureCompanies();
-            }
-          }
-        }
-      }
-    })    
-
-    .state('', {
-      url: '/companies',
-      views: {
-        'main': {
-          templateUrl: 'components/google_map/_index.html',
-          controller: 'MapAllCtrl as map',
-          resolve: {
-            companiesPromise: function(companyFactory) {
-            return companyFactory.ensureCompanies();
-            }
-          }
-        },
-        'second': {
-          templateUrl: 'components/companies/_index_finished.html',
-          controller: 'CompaniesCtrl as home',
-          resolve: {
-            companiesPromise: function(companyFactory) {
-            return companyFactory.ensureCompanies();
-            }
-          }
-        }
-      }
-    })    
-
-    .state('page-not-found', {
-      url: '/page-not-found',
-      templateUrl: 'error.html'
+    })
+    
+    .state('test', {
+      url: '/test',
+      template: '<h1>test</h1>'
     })
 
+    // .state('rewards', {
+    //   url: '/companies',
+    //   views: {
+    //     'main': {
+    //       templateUrl: 'components/google_map/_index.html',
+    //       controller: 'MapAllCtrl as map',
+    //       resolve: {
+    //         companiesPromise: function(companyFactory) {
+    //         return companyFactory.ensureCompanies();
+    //         }
+    //       }
+    //     },
+    //     'second': {
+    //       templateUrl: 'components/companies/_index_finished.html',
+    //       controller: 'CompaniesCtrl as home',
+    //       resolve: {
+    //         companiesPromise: function(companyFactory) {
+    //         return companyFactory.ensureCompanies();
+    //         }
+    //       }
+    //     }
+    //   }
+    // })
+    //
+    // .state('trips', {
+    //   url: '/companies',
+    //   views: {
+    //     'main': {
+    //       templateUrl: 'components/google_map/_index.html',
+    //       controller: 'MapAllCtrl as map',
+    //       resolve: {
+    //         companiesPromise: function(companyFactory) {
+    //         return companyFactory.ensureCompanies();
+    //         }
+    //       }
+    //     },
+    //     'second': {
+    //       templateUrl: 'components/companies/_index_finished.html',
+    //       controller: 'CompaniesCtrl as home',
+    //       resolve: {
+    //         companiesPromise: function(companyFactory) {
+    //         return companyFactory.ensureCompanies();
+    //         }
+    //       }
+    //     }
+    //   }
+    // })
+    //
+    // .state('login', {
+    //   url: '/login',
+    //   views: {
+    //     'main': {
+    //       templateUrl: 'components/google_map/_index.html',
+    //       controller: 'MapAllCtrl as map',
+    //       resolve: {
+    //         companiesPromise: function(companyFactory) {
+    //         return companyFactory.ensureCompanies();
+    //         }
+    //       }
+    //     },
+    //     'second': {
+    //       templateUrl: 'components/companies/_index_finished.html',
+    //       controller: 'CompaniesCtrl as home',
+    //       resolve: {
+    //         companiesPromise: function(companyFactory) {
+    //         return companyFactory.ensureCompanies();
+    //         }
+    //       }
+    //     }
+    //   }
+    // })
 
- $urlRouterProvider.otherwise('/page-not-found');
+    // .state('page-not-found', {
+    //   url: '/page-not-found',
+    //   templateUrl: 'error.html'
+    // })
+
+
+ // $urlRouterProvider.otherwise('/page-not-found');
 
 }]);

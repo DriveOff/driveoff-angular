@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Main" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Drive Off</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/foundation.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+
+  <link rel="stylesheet" href="app.css">
+
+
+ 
+  <!-- font awesome for icons -->
+</head>
+<body>
+
+
+<body ng-app="Main">
+        <div ng-controller="NavCtrl as nav">
+                <div class="off-canvas-wrap">
+                    <div class="inner-wrap">
+                        <nav class="tab-bar">
+                            <section class="right-small">
+                                <a class="right-off-canvas-toggle menu-icon" ><span></span></a>
+                            </section>
+
+                            <section class="middle tab-bar-section">
+                                <h1 class="title">Drive Off</h1>
+                            </section>
+
+
+                        </nav>
+
+                        <aside class="right-off-canvas-menu">
+                            <ul class="off-canvas-list">
+                                <li><a href="#/trip">New Trip</a></li>
+                                <li><a href="#/friends">Friends</a></li>
+                                <li><a href="#/rewards">Rewards</a></li>
+                            </ul>
+                        </aside>
+                       
+                        <section class="main-section">
+                            <div class="small-12 columns">
+                                <h1>How to use</h1>
+                                <p>Just use the standard layout for an offcanvas page as documented in the <a href="http://foundation.zurb.com/docs/components/offcanvas.html">foundation docs</a></p>
+                                <p>As long as you include mm.foundation.offcanvas it should simply work</p>
+                            </div>
+                        </section>
+
+                        <a class="exit-off-canvas"></a>
+                    </div>
+                </div>
+            
+        </div><!-- end of nav -->
+          <div class="main-section">
+            <div class="row">
+                <ui-view class="small-12 columns"></ui-view>
+            </div>
+          </div>
+
+        
+
+
+
+        <footer id="footer" class="">
+            <div class="main-section">
+
+                <div class="row">
+                    <div class="medium-3 small-6 margin30"> </div>
+                </div>
+                <div class="row">
+                    <div class="medium-12 text-center">
+                        <div class="footer-btm">
+
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </footer><!--default footer end here-->
+
+
+
+    
+</body>
+</html>

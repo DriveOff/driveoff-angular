@@ -5,7 +5,6 @@ function($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('friends', {
       url: '/friends',
-      // template: '<h1>my friends </h1>',
       templateUrl: 'components/friends/_index.html',
       controller: 'FriendsCtrl as myFriends',
       resolve: {

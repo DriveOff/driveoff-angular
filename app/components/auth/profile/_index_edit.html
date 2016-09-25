@@ -5,19 +5,19 @@
 </div>
 
   <legend>Logo Pic</legend>
-<form ng-submit="registerCtrl.register();">
+<form ng-submit="profile.updateProfile();">
   <fieldset>
     <div class="row">
       <div class="small-12 columns">
         <label for="user_name">Name</label>
-        <input id="user_name" name="user[name]" type="text" placeholder="Name" required>
+        <input id="user_name" name="user[name]" type="text" placeholder="Name" value="{profile.name}" required>
       </div>
     </div>
     
     <div class="row">
       <div class="small-12 columns">
         <label for="user_email">Email</label>
-        <input id="user_email" name="user[email]" type="text" placeholder="Email" required>
+        <input id="user_email" name="user[email]" type="text" placeholder="Email" value="{profile.email}" required>
       </div>
     </div>
     

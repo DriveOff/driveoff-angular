@@ -7,7 +7,9 @@ function friendsFactory($http, $q){
   var me = {
     friends: []
   }
-
+  
+  var getURL = 'data/friends.json';
+  
   // checks if the reps have already been fetched; if not, fetches them
   //
   // returns either the data or the promise
@@ -22,7 +24,7 @@ function friendsFactory($http, $q){
   //
   // returns the promise
   me.fetchFriends = function(){
-    return $http.get('data/friends.json').success(function(data) {
+    return $http.get(getURL).success(function(data) {
       if (!data.error){
         me.friends = data;
       }

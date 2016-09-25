@@ -3,7 +3,7 @@ function Auth($http, localStorageService, $rootScope) {
   var API_URL = 'https://driveoff.herokuapp.com'
   return {
     isAuthenticated: function() {
-      return LocalService.get('auth_token');
+      return localStorageService.get('auth_token');
     },
     
     login: function(credentials) {
@@ -12,8 +12,10 @@ function Auth($http, localStorageService, $rootScope) {
           localStorageService.set('auth_token', result.token);
           var user = { 
             id: result.id, 
-            username: result.username,
-            avatarUrl: result.avatarUrl
+            name: result.name,
+            avatar: result.avatar,
+            points: result.points,
+            email: result.email
           }
           localStorageService.set('user', JSON.stringify(user)); 
         });

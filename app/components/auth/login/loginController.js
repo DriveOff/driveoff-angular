@@ -6,10 +6,15 @@ Main.controller('LoginCtrl', ['Auth', '$state', '$scope', function (Auth, $state
       if ($scope.loginForm.$valid) {
         vm.errors = [];
         Auth.login(vm.user).success(function() {
-          $state.go('posts.list');
+          $state.go('profile');
         }).error(function(err) {
           vm.errors.push(err);
         });
       }
     };
+    
+    vm.validatePassword = function () {
+      
+    }
+    
 }])

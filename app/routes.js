@@ -3,6 +3,14 @@ Main.config([
 '$urlRouterProvider',
 function($stateProvider, $urlRouterProvider) {
   $stateProvider
+    .state('home', {
+      url: '',
+      templateUrl: 'components/home/_index.html'
+    })
+  
+  
+  
+  $stateProvider
     .state('friends', {
       url: '/friends',
       templateUrl: 'components/friends/_index.html',
@@ -83,12 +91,12 @@ function($stateProvider, $urlRouterProvider) {
     //   }
     // })
 
-    // .state('page-not-found', {
-    //   url: '/page-not-found',
-    //   templateUrl: 'error.html'
-    // })
+    .state('page-not-found', {
+      url: '/page-not-found',
+      templateUrl: 'error.html'
+    })
 
-
- // $urlRouterProvider.otherwise('/page-not-found');
+  // $httpProvider.interceptors.push('AuthInterceptor'); 
+ $urlRouterProvider.otherwise('/page-not-found');
 
 }]);

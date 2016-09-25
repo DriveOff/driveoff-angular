@@ -2,7 +2,8 @@ Main.config([
 '$stateProvider',
 '$urlRouterProvider',
 '$httpProvider',
-function($stateProvider, $urlRouterProvider, $httpProvider) {
+'localStorageServiceProvider',
+function($stateProvider, $urlRouterProvider, $httpProvider, localStorageServiceProvider) {
   
   $stateProvider
     .state('home', {
@@ -65,4 +66,9 @@ function($stateProvider, $urlRouterProvider, $httpProvider) {
  // when authentication is working, this is used to append authentication token with every request
  // also redirects to login
     $httpProvider.interceptors.push('AuthInterceptor');
+    
+  localStorageServiceProvider
+    .setPrefix('Main')
+    .setStorageType('sessionStorage')
+    .setNotify(true, true)
 }]);

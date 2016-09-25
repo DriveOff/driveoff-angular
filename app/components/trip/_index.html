@@ -1,12 +1,13 @@
 <h1 class="text-center margin30">Trip</h1>
 
-<h4 class="text-center">{{myTrip.service.status}}</h4>
+<h2 class="text-center trip-car"><i class="fa fa-truck"></i><br /></h2>
+<h2 class="text-center trip-status">{{myTrip.service.status}}</h2>
 
 <ul ng-show="{{myTrip.service.status == 'finished'}}">
   <li>myTrip.minutes</li>
   <li>myTrip.distance</li>
 </ul>
 <div class="text-center margin30">
-  <button ng-click="myTrip.beginTrip();" class="text-center">Begin Trip</button>
-  <button ng-click="myTrip.endTrip();" class="text-center">End Trip</button>
+  <button ng-click="myTrip.beginTrip();" class="large">Begin Trip</button>
+  <button ng-click="myTrip.endTrip();" class="large">End Trip</button>
 </div>

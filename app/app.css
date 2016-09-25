@@ -23,6 +23,9 @@ body {
   color: #444;
 }
 
+*:focus {
+  outline: none !important;
+}
 /* Typography */
 
 body, h1, h2, h3, h4, h5, h6, p, li, th, td {
@@ -45,6 +48,10 @@ h1, h2, h3 {
 
 h1 {
   margin-bottom: 1rem;
+}
+
+h2 {
+  color: #3498db;
 }
 
 p, li, th, td {
@@ -81,13 +88,13 @@ label {
   line-height: 1.5;
 }
 
-label, input, select, textarea {
+label, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="color"], select, textarea {
   font-family: 'Open Sans', sans-serif;
   font-size: 1.2rem;
   line-height: 1.5;
 }
 
-input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="color"], textarea {
+input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="color"], select, textarea {
   width: 100%;
   margin: 0.2rem 0 1rem 0;
   padding: 0.5rem 1rem;
@@ -127,7 +134,7 @@ textarea {
 
 /* Buttons */
 
-.button {
+button, .button {
   border-radius: 3px;
   background-color: #3498db;
   letter-spacing: 0.05rem;
@@ -157,13 +164,15 @@ textarea {
 }
 
 .tab-bar,
+.tab-bar-section,
 .tab-bar .menu-icon,
 .tab-bar .right-small {
   height: 4.3rem;
 }
 
 .nav-logo {
-  width: 100px;
+  margin-top: 5px;
+  width: 180px;
 }
 
 ul.off-canvas-list li {
@@ -248,13 +257,17 @@ ul.off-canvas-list li a {
   background-color: #3498db;
 }
 
+.black-background {
+  background-color: #000;
+}
+
 .dark, .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6, .dark p, .dark li, .dark th, .dark td {
   color: #fff;
 }
 
-/* Home & Login */
+/* Home, Login, Sign Up */
 
-.home .main-section, .login .main-section {
+.home .main-section, .login .main-section, .register .main-section {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -264,7 +277,7 @@ ul.off-canvas-list li a {
   background-image: url(assets/girl-and-car_2000x1335.jpg);
 }
 
-.login .main-section {
+.login .main-section, .register .main-section {
   background-image: url(assets/steering-wheel_2000x1333.jpg);
 }
 
@@ -282,6 +295,28 @@ ul.off-canvas-list li a {
 
 @media only screen and (min-width: 40.0625em) {
   .translucent-section {
-    background-color: rgba(255, 255, 255, 0.75);
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+/* Trip */
+
+h2.trip-car, .dark h2.trip-car{
+  margin-top: 2rem;
+  color: #abebc6;
+  font-size: 200px;
+}
+
+h2.trip-status {
+  margin-bottom: 2rem;
+}
+
+@media only screen and (min-width: 40.0625em) {
+  .trip-car {
+    margin-top: 5rem;
+  }
+  
+  .trip-status {
+    margin-bottom: 5rem;
   }
 }

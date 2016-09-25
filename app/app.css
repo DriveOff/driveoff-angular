@@ -1,5 +1,16 @@
 /* app css stylesheet */
 
+/*
+ * Color Key
+ *
+ * dark blue: #2e4053
+ * lime green: #daf7a6
+ * green: #2ecc71
+ * sea green: #abebc6
+ * aqua green: #1abc9c
+ * blue: #3498db
+ */
+
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;
@@ -23,25 +34,107 @@
   content: "|";
   padding-right: 0.3em;
 }
-/*Wendy's CSS*/
-h1, h2, h3, h4, h5, h6 {
+
+/* General */
+
+body {
+  color: #444;
+}
+
+/* Typography */
+
+body, h1, h2, h3, h4, h5, h6, p, li, th, td {
   font-family: 'Open Sans', sans-serif;
 }
 
-p {
-  font-family: 'Roboto', sans-serif;
+h1, h2, h3, h4, h5, h6 {
+  color: #2e4053;
 }
-/*Please do not change the version of Foundation - Angular JS module depends up on it.  These are overwriting some values*/
+
+h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
+  color: #3498db;
+  font-weight: 600;
+}
+
+h1, h2, h3 {
+  letter-spacing: 0.05rem;
+  line-height: 1.2;
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+p, li, th, td {
+  font-size: 1.2rem;
+  letter-spacing: 0.05rem;
+}
+
+p, li {
+  line-height: 1.8;
+}
+
+hr {
+  margin: 2rem 0;
+}
+
+hr.small-hr {
+  width: 25%;
+  border-color: #3498db;
+  border-width: 2px 0 0;
+}
+
+/* Navigation */
+
+.tab-bar {
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  background-color: #2e4053;
+}
+
+.tab-bar .title a {
+  color: #fff;
+}
+
+ul.off-canvas-list li {
+  font-size: 1rem;
+}
+
+ul.off-canvas-list li a {
+  padding: 1rem 1.5rem;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+/* Main Section */
+.main-section {
+  padding: 70px 0 50px;
+}
+
+/* Footer */
+
+#footer {
+  width: 100%;
+  padding: 30px 0;
+  background-color: #3498db;
+}
+
+/* Helpers */
+/* Please do not change the version of Foundation - Angular JS module depends up on it.  These are overwriting some values */
 .button.expanded {
   width: 100%;
 }
 
 .button {
-  background-color: #222;
+  background-color: #3498db;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
 }
 
-.tab-bar {
-  background-color: #222;
+.success, .button.success {
+  background-color: #2ecc71;
 }
 
 .d-reverse-icon {
@@ -53,10 +146,51 @@ p {
   margin-bottom: 30px;
 }
 
+.dark-blue-background {
+  background-color: #2e4053;
+}
 
-#footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  min-height: 50px; /* choose any height */
+.lime-green-background {
+  background-color: #daf7a6;
+}
+
+.green-background {
+  background-color: #2ecc71;
+}
+
+.sea-green-background {
+  background-color: #abebc6;
+}
+
+.aqua-green-background {
+  background-color: #1abc9c;
+}
+
+.blue-background {
+  background-color: #3498db;
+}
+
+.dark, .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6, .dark p, .dark li, .dark th, .dark td {
+  color: #fff;
+}
+
+/* Home */
+
+.home {
+  background-image: url(assets/girl-and-car_edit.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.home-content {
+  padding: 30px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+@media only screen and (min-width: 40.0625em) {
+  .home-content {
+    background-color: rgba(255, 255, 255, 0.75);
+  }
 }

@@ -46,13 +46,13 @@ function($stateProvider, $urlRouterProvider, $httpProvider, localStorageServiceP
     .state('login', {
       url: '/login',
       templateUrl: 'components/auth/login/_index.html',
-      controller: 'LoginCtrl as Login'
+      controller: 'LoginCtrl as loginCtrl'
     })
     
     .state('register', {
       url: '/register',
       templateUrl: 'components/auth/register/_index.html',
-      controller: 'RegisterCtrl as Register'
+      controller: 'RegisterCtrl as registerCtrl'
     })
 
     .state('page-not-found', {

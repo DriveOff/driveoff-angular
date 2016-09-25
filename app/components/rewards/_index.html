@@ -1,11 +1,16 @@
 <h1 class="text-center">  Rewards</h1>
-  
-  <div ng-repeat="reward in myRewards.rewards" class="col-sm-4 margin20">
+<h4 class="text-center">{{myRewards.points}} Points</h4>
+<h6 class="text-center" ng-show="myRewards.points == 0">Earn points to collect cool rewards!</h6>
+
+  <div ng-repeat="reward in myRewards.rewards | filter: greaterThan('NumberOfStamps', 0)" class="col-sm-4 margin20">
       <div class="rewards-wrap">
           <img ng-src="{{reward.photo}}" class="img-responsive" alt="">
-          <h4>{{reward.business}}</h4>
-          <p>{{reward.points}}</p>
+          <h4><i class="fa fa-plus-circle d-icon" ng-click="myRewards.chooseReward(reward.id);"></i>
+ {{reward.business_name}}  <span style="float: right;">{{reward.cost}} points</span></h4>
+           
           <p>{{reward.description}}</p>
-          <i class="fa fa-plus-circle d-icon" ng-click="myRewards.chooseReward(reward.id);"></i>
       </div><!--team-wrap-->
   </div><!--team col-->
+  <div class="text-center">
+    <a class="button text-center" href="#/trip">Start trip!</a>
+  </div>

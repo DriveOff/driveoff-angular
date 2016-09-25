@@ -65,6 +65,10 @@ hr.center {
   margin-left: auto;
 }
 
+strong {
+  font-weight: 600;
+}
+
 /* Forms */
 label {
   font-weight: 600;

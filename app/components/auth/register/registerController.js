@@ -16,9 +16,4 @@ Main.controller('RegisterCtrl', ['Auth', '$state', '$scope', function (Auth, $st
       
     };
     
-    vm.validateRequiredFields = function() {
-      var requiredFields = 
-      
-      
-    }
 }])

@@ -11,7 +11,12 @@ function($stateProvider, $urlRouterProvider, $httpProvider, localStorageServiceP
       templateUrl: 'components/home/_index.html'
     })
   
-  
+  $stateProvider
+    .state('profile', {
+      url: '/profile',
+      templateUrl: 'components/auth/profile/_index.html',
+      controller: 'ProfileCtrl as myProfile'
+    })
   
   $stateProvider
     .state('friends', {

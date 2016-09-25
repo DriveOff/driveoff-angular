@@ -1,25 +1,18 @@
-function coordFactory(localStorageService) {
+function coordFactory() {
   
   var factory = {
-    
+    positions: []
   }
   
   var success = function (position) {
-  
-         
-    var a;
-    //is anything in localstorage?
-    if (localStorage.getItem('positions') === null) {
-        a = [];
-    } else {
-         // Parse the serialized data back into an array of objects
-         a = JSON.parse(localStorage.getItem('positions'));
-     }
      // Push the new data (whether it be an object or anything else) onto the array
-     a.push(position);
-
+    var latitude = position.coords.latitude;
+    var longitude = position.coords.longitude;
+    var timestamp = position.coords.timestamp;
+    
+    
+    factory.positions.push({"latitude": latitude, "longitude": longitude, "timestamp": timestamp});
      // Re-serialize the array back into a string and store it in localStorage
-     localStorage.setItem('positions', JSON.stringify(a));
      
 
   };
@@ -30,11 +23,11 @@ function coordFactory(localStorageService) {
   
   
   factory.getAllCoordinates = function () {
-    return  JSON.parse(localStorage.getItem('positions'));
+    return factory.positions;
   }
 
-  factory.getCurrentPosition()  = function() {
-    navigator.geolocation.getCurrentPosition(success, error, {timeout: 10000});
+  factory.getCurrentPosition = function (callback) {
+    navigator.geolocation.getCurrentPosition(success, error, callback);
   }
  
   return factory;

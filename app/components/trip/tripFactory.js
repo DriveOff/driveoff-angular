@@ -28,33 +28,24 @@ function tripFactory($http, $q, coordFactory, calculateDistanceFactory, profileF
     //get positions from local storage
     var positions = coordFactory.getAllCoordinates();
     
+        console.log(positions);
+    
     //calculate miles from all locations
     var len = positions.length;
+    
+
     for (var i = 1; i < len; i++ ){
-      miles+= calculateDistanceFactory.getDistance(positions[i-1].coords.latitude, positions[i-1].coords.latitude, positions[i].coords.latitude, positions[i].coords.latitude);
+      trip.miles+= calculateDistanceFactory.getDistance(positions[i-1].latitude, positions[i-1].longitude, positions[i].latitude, positions[i].longitude);
     }
-    
-    // calculate minutes from start and end time
-    trip.minutes = endTime - startTime;
-    
+    console.log(trip.miles);
+    // calculate minutes from start and end time (60,000 mSeconds in a Minute)
+    trip.minutes = (trip.endTime - trip.startTime)/60000;
+    console.log(trip.minutes);
     // set user id
     trip.user_id = profileFactory.id;
+    console.log(trip.user_id);
+    console.log(positions);
   
-  }
-  
-  // gets the location and adds it to the array
-  //
-  // returns nothing
-  trip.checkLocation = function(){
-    coordFactory.getCurrentPosition();
-  }
-  
-  // checks if the reps have already been fetched; if not, fetches them
-  //
-  // returns the promise
-  trip.endTrip = function() {
-    trip.endTime = getCurrentTime();
-    processTrip();
     return $http.post(postTripURL, trip).success(function(data) {
       if (!data.error){
         trip.posted = true;
@@ -62,12 +53,28 @@ function tripFactory($http, $q, coordFactory, calculateDistanceFactory, profileF
     });
   }
   
+  // gets the location and adds it to the array
+  //
+  // returns nothing
+  trip.checkLocation = function(){
+    coordFactory.getCurrentPosition(function(){});
+  }
+  
+  // checks if the reps have already been fetched; if not, fetches them
+  //
+  // returns the promise
+  trip.endTrip = function() {
+    trip.endTime = getCurrentTime();
+    trip.checkLocation(function(){});
+    processTrip();
+  }
+  
   
   // begins the trip by getting the original location
   //
   // returns nothing
   trip.beginTrip = function(){
-    trip.startTime = getCurrenTime();
+    trip.startTime = getCurrentTime();
     trip.checkLocation();
   }
   

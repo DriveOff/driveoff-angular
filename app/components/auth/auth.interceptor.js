@@ -15,7 +15,7 @@ function AuthInterceptor($q, $injector) {
         return config;
       },
       responseError: function(response) {
-        var localStorageService = $injector.get('LocalService');
+        var localStorageService = $injector.get('localStorageService');
         // TODO: revisit for the 403
         if (response.status === 401 || response.status === 403) {
           localStorageService.unset('auth_token');

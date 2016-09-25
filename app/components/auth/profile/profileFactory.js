@@ -1,6 +1,6 @@
-function profileFactory(localStorageService) {
+function profileFactory($injector) {
   
-  
+  var localStorageService = $injector.get('localStorageService');
   
   var profile = {
     name: localStorageService.get("name"),

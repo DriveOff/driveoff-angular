@@ -4,4 +4,5 @@ Main.controller('RewardsCtrl', ['rewardsPromise', 'rewardsFactory', function (re
   this.rewards = rewardsPromise.data;
   this.chooseReward = rewardsFactory.chooseReward;
   this.points = rewardsFactory.points || 0;
+  
 }])

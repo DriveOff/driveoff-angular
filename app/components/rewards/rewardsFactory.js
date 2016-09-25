@@ -43,14 +43,13 @@ function rewardsFactory($http, $q, $filter, profileFactory){
   // returns the JSON object
   me.chooseReward = function(id){
     var reward = $filter('filter')(me.rewards, function(obj) {return obj.id === id;})[0];
-    
-    // return $http.post(postURL, reward).success(function(data) {
-    //   if (!data.error){
+    return $http.post(postURL, reward).success(function(data) {
+      if (!data.error){
         me.rewards = me.rewards.splice(id, 1);
         profileFactory.points = profileFactory.points - reward.points;
         me.points = profileFactory.points;
-    //   }
-    // })
+      }
+    })
       
   }
 

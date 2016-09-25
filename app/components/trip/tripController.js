@@ -6,4 +6,7 @@ Main.controller('TripCtrl', ['tripFactory', function (tripFactory) {
   this.beginTrip = tripFactory.beginTrip;
   this.checkLocation = tripFactory.checkLocation;
   this.sleep = tripFactory.sleep;
+  this.service = tripFactory;
+
+  
 }])

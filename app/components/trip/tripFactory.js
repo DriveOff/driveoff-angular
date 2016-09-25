@@ -10,7 +10,8 @@ function tripFactory($http, $q, coordFactory, calculateDistanceFactory, profileF
     startTime: 0,
     endTime: 0,
     posted: false,
-    user_id: 0
+    user_id: 0,
+    status: 'inactive'
   }
   
   var postTripURL = 'https://driveoff.herokuapp.com/trips';
@@ -25,6 +26,7 @@ function tripFactory($http, $q, coordFactory, calculateDistanceFactory, profileF
   //
   // returns nothing
   var processTrip = function() {
+    trip.status = 'finished';
     //get positions from local storage
     var positions = coordFactory.getAllCoordinates();
     
@@ -46,7 +48,10 @@ function tripFactory($http, $q, coordFactory, calculateDistanceFactory, profileF
     console.log(trip.user_id);
     console.log(positions);
   
-    return $http.post(postTripURL, trip).success(function(data) {
+    return $http.post(postTripURL, trip, { 
+      transformRequest: angular.identity,
+      headers: {'Access-Control-Allow-Origin': '*'
+    }}).success(function(data) {
       if (!data.error){
         trip.posted = true;
       }
@@ -74,6 +79,7 @@ function tripFactory($http, $q, coordFactory, calculateDistanceFactory, profileF
   //
   // returns nothing
   trip.beginTrip = function(){
+    trip.status = 'driving safely...';
     trip.startTime = getCurrentTime();
     trip.checkLocation();
   }

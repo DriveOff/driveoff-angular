@@ -3,16 +3,17 @@
 // $http - angular Dependency so I can make an ajax call
 //
 // returns an object with the data
-function rewardsFactory($http, $q, $filter){
+function rewardsFactory($http, $q, $filter, profileFactory){
   var me = {
-    rewards: []
+    rewards: [],
+    points: profileFactory.points
   }
   
-  var postURL = 'https://driveoff.herokuapp.com/redemptions/new';
+  var postURL = 'https://driveoff.herokuapp.com/redemptions';
   // var getURL = 'https://driveoff.herokuapp.com/rewards'
   
-  var getURL = 'data/rewards.json';
-  var points = 400;
+  var getURL = 'https://driveoff.herokuapp.com/rewards'
+  // var getURL = 'data/rewards.json';
   // checks if the reps have already been fetched; if not, fetches them
   //
   // returns either the data or the promise
@@ -42,13 +43,13 @@ function rewardsFactory($http, $q, $filter){
   // returns the JSON object
   me.chooseReward = function(id){
     var reward = $filter('filter')(me.rewards, function(obj) {return obj.id === id;})[0];
-    
-    // return $http.post(postURL, reward).success(function(data) {
-    //   if (!data.error){
+    return $http.post(postURL, reward).success(function(data) {
+      if (!data.error){
         me.rewards = me.rewards.splice(id, 1);
-        points = points - reward.points;
-    //   }
-    // })
+        profileFactory.points = profileFactory.points - reward.c;
+        me.points = profileFactory.points;
+      }
+    })
       
   }
 

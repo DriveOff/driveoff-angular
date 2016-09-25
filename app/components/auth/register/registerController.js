@@ -11,4 +11,14 @@ Main.controller('RegisterCtrl', ['Auth', '$state', '$scope', function (Auth, $st
         });
       }
     };
+    
+    vm.validatePassword = function() {
+      
+    };
+    
+    vm.validateRequiredFields = function() {
+      var requiredFields = 
+      
+      
+    }
 }])

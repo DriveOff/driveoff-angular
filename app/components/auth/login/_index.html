@@ -1,8 +1,13 @@
 <h1 class="text-center">Login</h1>
 
-<form>
+<div id="error-messages" class="error in loginCtrl.errors">
+  <p style="color:red;">{{error}}</p>
+</div>
+
+<legend>Logo Pic</legend>
+<form ng-submit="loginCtrl.login();">
   <fieldset>
-    <legend>Logo Pic</legend>
+
 
     <div class="row">
       <div class="large-4 columns">

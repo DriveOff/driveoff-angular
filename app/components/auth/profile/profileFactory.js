@@ -7,7 +7,8 @@ function profileFactory(localStorageService) {
     email: localStorageService.get("email"),
     points: localStorageService.get("points"),
     avatar: localStorageService.get("avatar"),
-    id: localStorageService.get("id")
+    id: localStorageService.get("id"),
+    errors: []
   }
   
   var putURL = "https://driveoff.herokuapp.com/users";

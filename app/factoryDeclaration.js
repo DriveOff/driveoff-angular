@@ -1,6 +1,6 @@
 Main.factory('friendsFactory', friendsFactory);
 Main.factory('rewardsFactory', rewardsFactory);
-
+Main.factory('tripFactory', tripFactory);
 // Main.factory('aboutUs', aboutUs);
 //
 // Main.factory('config', config);

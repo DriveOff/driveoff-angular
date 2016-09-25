@@ -27,6 +27,13 @@ function($stateProvider, $urlRouterProvider) {
       }
     })
     
+    .state('trip', {
+      url: '/trip',
+      // template: 'test'
+      templateUrl: 'components/trip/_index.html',
+      controller: 'TripCtrl as myTrip'
+    })
+    
     //
     // .state('trips', {
     //   url: '/companies',

@@ -1,14 +1,16 @@
   <h1 class="text-center margin30">Friends</h1>
   
-  <div class="row align-center">
+  <div class="text-center">
     <a class="button" ng-class="{on: !myFriends.pointsAll}" ng-click="myFriends.togglePoints();">This Week</a>
     <a class="button" ng-class="{on: myFriends.pointsAll}" ng-click="myFriends.togglePoints();">All Time</a>
   </div>
   <div ng-repeat="friend in myFriends.friends | orderBy: myFriends.points" class="col-sm-4 margin20">
       <div class="friends-wrap">
           <img ng-src="{{friend.photo}}" class="img-responsive" alt="">
-          <h4>{{friend.name}}</h4>
-          <p ng-show="myFriends.pointsAll">{{friend.points_all_time}}</p>
-          <p ng-hide="myFriends.pointsAll">{{friend.points_this_week}}</p>
+          <h4><i class="fa fa-user"></i> {{friend.name}}
+          <span style="float:right;" ng-show="myFriends.pointsAll">{{friend.points}}</span>
+          <span style="float:right;" ng-hide="myFriends.pointsAll">{{friend.points_this_week}}</span>
+          </h4>
+
       </div><!--team-wrap-->
   </div><!--team col-->

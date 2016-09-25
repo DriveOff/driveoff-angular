@@ -9,7 +9,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
   <!--Do not update the version of foundation -angular-foundation library depends on this one -->
   <link href="//cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/foundation.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i|Roboto" rel="stylesheet">
 
   <link rel="stylesheet" href="app.css">
 
@@ -32,51 +32,43 @@
 </head>
 
 <body ng-app="Main">
-        <div ng-controller="NavCtrl as nav">
-                <div class="off-canvas-wrap">
-                    <div class="inner-wrap">
-                        <nav class="tab-bar">
-                            <section class="right-small">
-                                <a class="right-off-canvas-toggle menu-icon" ><span></span></a>
-                            </section>
+  <div ng-controller="NavCtrl as nav">
+    <div class="off-canvas-wrap">
+      <div class="inner-wrap">
+        <nav class="tab-bar">
+          <section class="right-small">
+            <a class="right-off-canvas-toggle menu-icon" ><span></span></a>
+          </section>
+          <section class="middle tab-bar-section">
+            <a href="/"><img class="nav-logo" src="assets/logo-light.png" alt="Drive Off" /></a>
+          </section>
+        </nav> 
+        
+        <div class="main-section">
+          <div class="row">
+            <ui-view class="small-12 large-10 large-offset-1 columns"></ui-view>
+          </div>
+        </div>
+      
+        <aside class="right-off-canvas-menu">
+          <ul class="off-canvas-list">
+            <li><a href="#/trip">New Trip</a></li>
+            <li><a href="#/friends">Friends</a></li>
+            <li><a href="#/rewards">Rewards</a></li>
+          </ul>
+        </aside>
+        <a class="exit-off-canvas"></a>
+      </div>
+    </div>
+  </div><!-- end of NavCtrl -->
 
-                            <section class="middle tab-bar-section">
-                                <h1 class="title"><i class="fa fa-car d-icon"></i>  Drive Off</h1>
-                            </section>
-
-
-                        </nav>
-                      <div class="margin30"></div>  
-                      <div class="main-section">
-                        <div class="row">
-                            <ui-view class="small-12 large-10 large-offset-1 columns"></ui-view>
-                        </div>
-                      </div>
-                      
-                        <aside class="right-off-canvas-menu">
-                            <ul class="off-canvas-list">
-                                <li><a href="#/trip">New Trip</a></li>
-                                <li><a href="#/friends">Friends</a></li>
-                                <li><a href="#/rewards">Rewards</a></li>
-                            </ul>
-                        </aside>
-                       
-
-
-                        <a class="exit-off-canvas"></a>
-                    </div>
-                </div>
-            
-        </div><!-- end of NavCtrl -->
-        <footer id="footer" class="">
-            <div class="footer-section">
-
-                <div class="row">
-                    <div class="medium-3 small-6 columns"> Footer</div>
-                </div>
-
-            </div>
-        </footer><!--default footer end here-->
+  <footer id="footer" class="blue-background dark">
+    <div class="footer-section">
+      <div class="row">
+        <div class="small-12 columns">&copy; 2016 Drive Off<strong></div>
+      </div>
+    </div>
+  </footer><!--default footer end here-->
 
 
 

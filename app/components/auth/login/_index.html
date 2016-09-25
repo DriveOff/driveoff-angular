@@ -1,14 +1,12 @@
-<h1 class="text-center margin-30">Login</h1>
+<div class="small-12 medium-8 medium-offset-2 large-6 large-offset-3 columns translucent-section">
+  <h2 class="text-center">Login</h2>
+  <hr class="small-hr center">
 
-<div id="error-messages" class="error in loginCtrl.errors">
-  <p style="color:red;">{{error}}</p>
-</div>
+  <div id="error-messages" class="error in loginCtrl.errors">
+    <p style="color:red;">{{error}}</p>
+  </div>
 
-<legend>Logo Pic</legend>
-<form ng-submit="loginCtrl.login();">
-  <fieldset>
-
-
+  <form ng-submit="loginCtrl.login();">
     <div class="row">
       <div class="small-12 columns">
         <label for="user_email">Email</label>
@@ -22,18 +20,17 @@
         <input id="user_password" name="user[password]" type="password" placeholder="Enter password">
       </div>
     </div>
-    
+  
     <div class="row">
       <div class="small-12 columns">
         <input id="user_remember" name="user[remember]" type="checkbox"><label for="user_remember">Remember Me</label>
       </div>
-      
     </div>
-    
+  
     <div class="row">
       <div class="small-12 columns">
         <a class="button expanded" href="#">Sign In</a>
       </div>
-
-  </fieldset>
-</form>
+    </div>
+  </form>
+</div>

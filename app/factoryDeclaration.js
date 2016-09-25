@@ -1,4 +1,5 @@
 Main.factory('friendsFactory', friendsFactory);
+Main.factory('rewardsFactory', rewardsFactory);
 
 // Main.factory('aboutUs', aboutUs);
 //

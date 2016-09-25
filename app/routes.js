@@ -13,35 +13,20 @@ function($stateProvider, $urlRouterProvider) {
         }
       }
     })
-    
-    .state('test', {
-      url: '/test',
-      template: '<h1>test</h1>'
-    })
 
-    // .state('rewards', {
-    //   url: '/companies',
-    //   views: {
-    //     'main': {
-    //       templateUrl: 'components/google_map/_index.html',
-    //       controller: 'MapAllCtrl as map',
-    //       resolve: {
-    //         companiesPromise: function(companyFactory) {
-    //         return companyFactory.ensureCompanies();
-    //         }
-    //       }
-    //     },
-    //     'second': {
-    //       templateUrl: 'components/companies/_index_finished.html',
-    //       controller: 'CompaniesCtrl as home',
-    //       resolve: {
-    //         companiesPromise: function(companyFactory) {
-    //         return companyFactory.ensureCompanies();
-    //         }
-    //       }
-    //     }
-    //   }
-    // })
+
+    .state('rewards', {
+      url: '/rewards',
+      // template: 'test'
+      templateUrl: 'components/rewards/_index.html',
+      controller: 'RewardsCtrl as myRewards',
+      resolve: {
+        rewardsPromise: function(rewardsFactory) {
+          return rewardsFactory.ensureRewards();
+        }
+      }
+    })
+    
     //
     // .state('trips', {
     //   url: '/companies',

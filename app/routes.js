@@ -76,4 +76,41 @@ function($stateProvider, $urlRouterProvider, $httpProvider, localStorageServiceP
     .setPrefix('Main')
     .setStorageType('sessionStorage')
     .setNotify(true, true)
-}]);
+}]).
+  run(function($rootScope, $location) {
+    $rootScope.$watch(function() {
+      console.log("works");
+    /* Add class to body */
+      var page = $location.path();
+      if (page == '') {
+        var state_name = 'home';
+      } else {
+        var state_name = page.replace(/\//g, '');
+      }
+      $('body').removeAttr('class');
+      $('body').addClass(state_name);
+  
+      /* Sticky footer */
+      var $window = $(window),
+          $main = $('.main-section'),
+          $footer = $('#footer');
+  
+      var pushFooterDown = function() {
+        $main.css('min-height', '');
+
+        windowHeight = $window.height();
+        mainHeight = $main.outerHeight();
+        mainTop = $main.offset().top;
+        footerHeight = $footer.outerHeight();
+
+        mainMinHeight = windowHeight - mainTop - footerHeight;
+
+        if (mainHeight < mainMinHeight) {
+          $main.css('min-height', mainMinHeight);
+        }
+      }
+
+      pushFooterDown();
+      $window.resize(pushFooterDown);
+  })
+});;

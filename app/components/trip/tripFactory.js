@@ -69,6 +69,8 @@ function tripFactory($http, $q, coordFactory, calculateDistanceFactory, profileF
   //
   // returns the promise
   trip.endTrip = function() {
+    $('body').removeClass('dark black-background');
+    
     trip.endTime = getCurrentTime();
     trip.checkLocation(function(){});
     processTrip();
@@ -79,6 +81,8 @@ function tripFactory($http, $q, coordFactory, calculateDistanceFactory, profileF
   //
   // returns nothing
   trip.beginTrip = function(){
+    $('body').addClass('dark black-background');
+    
     trip.status = 'driving safely...';
     trip.startTime = getCurrentTime();
     trip.checkLocation();

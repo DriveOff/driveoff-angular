@@ -40,6 +40,10 @@ p {
   background-color: #222;
 }
 
+.button.on {
+  background-color: #444;
+}
+
 .tab-bar {
   background-color: #222;
 }
@@ -52,7 +56,6 @@ p {
   margin-top: 30px;
   margin-bottom: 30px;
 }
-
 
 #footer {
   position: fixed;

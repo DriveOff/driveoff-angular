@@ -13,5 +13,5 @@ Main.controller('LoginCtrl', ['Auth', '$state', '$scope', function (Auth, $state
       }
     };
   
-    
+
 }])

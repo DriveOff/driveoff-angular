@@ -1,11 +1,12 @@
-function AuthInterceptor($q, $injector) {
+function AuthInterceptor($q, $injector, $sessionStorage) {
+   
     return {
       request: function(config) {
-        var localStorageService = $injector.get('localStorageService');
+      
         var token;
 
-        if (localStorageService.get('auth_token')) {
-          token = localStorageService.get('auth_token');
+        if ($sessionStorage.auth_token) {
+          token = $sessionStorage.auth_token;
         }
 
         if (token) {
@@ -15,10 +16,8 @@ function AuthInterceptor($q, $injector) {
         return config;
       },
       responseError: function(response) {
-        var localStorageService = $injector.get('localStorageService');
-        // TODO: revisit for the 403
         if (response.status === 401 || response.status === 403) {
-          localStorageService.unset('auth_token');
+          delete $sessionStorage.auth_token;
           $injector.get('$state').go('login');
         }
 

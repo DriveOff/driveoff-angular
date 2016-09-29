@@ -1,13 +1,13 @@
-function profileFactory($injector) {
+function profileFactory($sessionStorage) {
   
-  var localStorageService = $injector.get('localStorageService');
+  var localStorageService = $sessionStorage;
   
   var profile = {
-    name: localStorageService.get("name"),
-    email: localStorageService.get("email"),
-    points: localStorageService.get("points"),
-    avatar: localStorageService.get("avatar"),
-    id: localStorageService.get("id"),
+    name: localStorageService.name,
+    email: localStorageService.email,
+    points: localStorageService.points,
+    avatar: localStorageService.avatar,
+    id: localStorageService.id,
     errors: []
   }
   

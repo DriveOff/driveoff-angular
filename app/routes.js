@@ -2,8 +2,7 @@ Main.config([
 '$stateProvider',
 '$urlRouterProvider',
 '$httpProvider',
-'localStorageServiceProvider',
-function($stateProvider, $urlRouterProvider, $httpProvider, localStorageServiceProvider) {
+function($stateProvider, $urlRouterProvider, $httpProvider) {
   
   $stateProvider
     .state('home', {
@@ -54,6 +53,11 @@ function($stateProvider, $urlRouterProvider, $httpProvider, localStorageServiceP
       controller: 'LoginCtrl as loginCtrl'
     })
     
+    .state('logout', {
+      url:  '/logout',
+      controller: 'LogoutCtrl as logout',
+    }
+    
     .state('register', {
       url: '/register',
       templateUrl: 'components/auth/register/_index.html',
@@ -72,10 +76,6 @@ function($stateProvider, $urlRouterProvider, $httpProvider, localStorageServiceP
  // also redirects to login
     $httpProvider.interceptors.push('AuthInterceptor');
     
-  localStorageServiceProvider
-    .setPrefix('Main')
-    .setStorageType('sessionStorage')
-    .setNotify(true, true)
 }]).
   run(function($rootScope, $location) {
     $rootScope.$watch(function() {

@@ -10,14 +10,12 @@ function($stateProvider, $urlRouterProvider, $httpProvider) {
       templateUrl: 'components/home/_index.html'
     })
   
-  $stateProvider
     .state('profile', {
       url: '/profile',
       templateUrl: 'components/auth/profile/_index.html',
       controller: 'ProfileCtrl as myProfile'
     })
   
-  $stateProvider
     .state('friends', {
       url: '/friends',
       templateUrl: 'components/friends/_index.html',
@@ -56,7 +54,7 @@ function($stateProvider, $urlRouterProvider, $httpProvider) {
     .state('logout', {
       url:  '/logout',
       controller: 'LogoutCtrl as logout',
-    }
+    })
     
     .state('register', {
       url: '/register',
@@ -113,4 +111,4 @@ function($stateProvider, $urlRouterProvider, $httpProvider) {
       pushFooterDown();
       $window.resize(pushFooterDown);
   })
-});;
+});

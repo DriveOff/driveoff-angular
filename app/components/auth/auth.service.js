@@ -45,20 +45,20 @@ function Auth($http, $sessionStorage) {
       //    }
       // }
 
-        function createFormData (obj) {
-        var fd = new FormData();
-        for (prop in obj) {
-            if (obj.hasOwnProperty(prop)) {
-                // do something with data[prop]
-                fd.append(prop, obj[prop]);
-            }
-        }
-        // fd.append("user", JSON.stringify(obj));
-        return fd;
-      }
+      //   function createFormData (obj) {
+      //   var fd = new FormData();
+      //   for (prop in obj) {
+      //       if (obj.hasOwnProperty(prop)) {
+      //           // do something with data[prop]
+      //           fd.append(prop, obj[prop]);
+      //       }
+      //   }
+      //   // fd.append("user", JSON.stringify(obj));
+      //   return fd;
+      // }
 
       
-      return $http.post(API_URL + '/users', JSON.stringify(formData), 
+      return $http.post(API_URL + '/users', JSON.stringify({"user": formData}), 
       {
         transformRequest: angular.identity,
         headers: {'Content-Type': 'application/json'}

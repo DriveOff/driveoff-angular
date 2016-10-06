@@ -6,66 +6,66 @@
     <p style="color:red;">{{error}}</p>
   </div>
 
-  <form ng-submit="registerCtrl.register(user);">
+  <form ng-submit="registerCtrl.register();">
     <div class="row">
       <div class="small-12 columns">
         <label for="user_name">Name</label>
-        <input id="user_name" ng-model="user.name" type="text" placeholder="Name" required>
+        <input id="user_name" ng-model="registerCtrl.user.name" type="text" placeholder="Name" required>
       </div>
 
     </div>
     <div class="row">
       <div class="small-12 columns">
         <label for="user_email">Email</label>
-        <input id="user_email" ng-model="user.email" type="text" placeholder="Email" required>
+        <input id="user_email" ng-model="registerCtrl.user.email" type="text" placeholder="Email" required>
       </div>
     </div>
 
     <div class="row">
       <div class="small-12 columns">
         <label for="user_password">Password</label>
-        <input id="user_password" ng-model="user.password" type="password" placeholder="Enter password" required>
+        <input id="user_password" ng-model="registerCtrl.user.password" type="password" placeholder="Enter password" required>
       </div>
     </div>
 
     <div class="row">
       <div class="small-12 columns">
         <label for="user_password">Password Confirmation</label>
-        <input id="user_password_confirmation" ng-model="user.password_confirmation" type="password" placeholder="Enter password confirmation" ng-blur="registerCtrl.validatePassword();" required>
+        <input id="user_password_confirmation" ng-model="registerCtrl.user.password_confirmation" type="password" placeholder="Enter password confirmation" ng-blur="registerCtrl.user.validatePassword();" required>
       </div>
     </div>
     <div class="row">
       <div class="small-12 columns">
         <label for="user_avatar">Profile Picture</label>
-        <input id="user_avatar" ng-model="user.avatar" type="file">
+        <input id="user_avatar" ng-model="registerCtrl.user.avatar" type="file">
       </div>
     </div>
   
     <div class="row">
       <div class="small-12 columns">
         <label for="user_city">City</label>
-        <input id="user_city" ng-model="user.city" type="text" placeholder="City" required>
+        <input id="user_city" ng-model="registerCtrl.user.city" type="text" placeholder="City" required>
       </div>
     </div>
   
     <div class="row">
       <div class="small-12 columns">
         <label for="user_state">State</label>
-        <input id="user_state" ng-model="user.state" type="text" placeholder="State" maxlength="2" required>
+        <input id="user_state" ng-model="registerCtrl.user.state" type="text" placeholder="State" maxlength="2" required>
       </div>
     </div>
   
     <div class="row">
       <div class="small-12 columns">
         <label for="user_zip_code">Zip Code</label>
-        <input id="user_zip_code" ng-model="user.zip_code" type="text" placeholder="Zip Code" required>
+        <input id="user_zip_code" ng-model="registerCtrl.user.zip_code" type="text" placeholder="Zip Code" required>
       </div>
     </div>
   
     <div class="row">
       <div class="small-12 columns">
         <label for="user_gender">Gender</label>
-        <select id="user_gender" ng-model="user.gender" required>
+        <select id="user_gender" ng-model="registerCtrl.user.gender" required>
           <option value="1">Male</option>
           <option value="2">Female</option>
           <option value="3">Prefer not to say</option>

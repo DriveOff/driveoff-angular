@@ -1,7 +1,7 @@
 function Auth($http, $sessionStorage) {
   
-  var API_URL = 'https://driveoff.herokuapp.com'
-
+  // var API_URL = 'https://driveoff.herokuapp.com'
+  var API_URL = 'http://localhost:3000'
   return {
     isAuthenticated: function() {
       return $sessionStorage.auth_token;
@@ -28,15 +28,43 @@ function Auth($http, $sessionStorage) {
       delete $sessionStorage.auth_token;
       delete $sessionStorage.user;
     },
-
+// creates a FormData JS object with appended values from obj
+  //
+  // obj - JSON object
+  //
+  // returns FormData object
+  
     register: function(formData) {
       delete $sessionStorage.auth_token;
-      var register = $http.post(API_URL + '/users', formData);
-      register.success(function(result) {
-        $sessionStorage.auth_token = result.token;
-      });
+      // var req = {
+      //    method: 'POST',
+      //    url: API_URL + '/users',
+      //    headers: {'Content-Type': undefined},
+      //    data: {
+      //     "user": formData
+      //    }
+      // }
 
-      return register;
+        function createFormData (obj) {
+        var fd = new FormData();
+        for (prop in obj) {
+            if (obj.hasOwnProperty(prop)) {
+                // do something with data[prop]
+                fd.append(prop, obj[prop]);
+            }
+        }
+        // fd.append("user", JSON.stringify(obj));
+        return fd;
+      }
+
+      
+      return $http.post(API_URL + '/users', JSON.stringify(formData), 
+      {
+        transformRequest: angular.identity,
+        headers: {'Content-Type': 'application/json'}
+       }).then(function(result) {
+          $sessionStorage.auth_token = result.token;
+       });
     }
   }
 }

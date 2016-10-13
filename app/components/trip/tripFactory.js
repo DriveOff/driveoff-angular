@@ -14,6 +14,12 @@ function tripFactory($http, $q, coordFactory, calculateDistanceFactory, profileF
     status: 'inactive'
   }
   
+  // returns an array of positions
+  
+  trip.positions = function () {
+    return coordFactory.getAllCoordinates();
+  }
+
   var postTripURL = 'https://driveoff.herokuapp.com/trips';
   
   
@@ -21,16 +27,17 @@ function tripFactory($http, $q, coordFactory, calculateDistanceFactory, profileF
     var d = new Date();
     return d.getTime();
   }
-    
+
   //processes the miles and minutes for the trip
   //
   // returns nothing
   var processTrip = function() {
     trip.status = 'finished';
     //get positions from local storage
-    var positions = coordFactory.getAllCoordinates();
     
-        console.log(positions);
+    var positions = trip.positions;
+
+    console.log(trip.positions);
     
     //calculate miles from all locations
     var len = positions.length;

@@ -363,3 +363,9 @@ h2.trip-status {
     opacity: 0;
   }
 }
+
+/* Trip map size */
+#map {
+  height:300px;
+  width:100%;
+}

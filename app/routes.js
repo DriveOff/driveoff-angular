@@ -45,6 +45,11 @@ function($stateProvider, $urlRouterProvider, $httpProvider) {
       controller: 'TripCtrl as myTrip'
     })
 
+    .state('trip.map', {
+      templateUrl: 'components/map/_index.html',
+      controller: 'MapCtrl as myMap'
+    })
+
     .state('login', {
       url: '/login',
       templateUrl: 'components/auth/login/_index.html',

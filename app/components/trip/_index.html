@@ -8,7 +8,8 @@
   <li><i class="fa fa-car"></i> {{ myTrip.service.minutes }} minutes</li>
   <li><i class="fa fa-clock-o"></i> {{ myTrip.service.miles }} miles</li>
 </ul>
+<div ui-view></div>
 <div class="text-center margin30">
-  <button ng-click="myTrip.beginTrip();" class="large">Begin Trip</button>
-  <button ng-click="myTrip.endTrip();" class="large">End Trip</button>
+  <button ng-click="myTrip.beginTrip();" class="large" ng-if="myTrip.service.status == 'inactive'">Begin Trip</button>
+  <button ng-click="myTrip.endTrip();" class="large" ng-if="myTrip.service.status == 'driving safely...'" ui-sref="trip.map">End Trip</button>
 </div>

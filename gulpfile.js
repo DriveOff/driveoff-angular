@@ -12,6 +12,7 @@ var gulp = require('gulp'),
     CSS_FILES = ['app/css/style.css' ]
     var concat = require('gulp-concat');
 
+
 gulp.task('buildAngular', function() {
     return gulp.src(ANGULAR_FILES)
         .pipe(uglify({mangle: false}))

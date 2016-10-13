@@ -56,7 +56,7 @@ function($stateProvider, $urlRouterProvider, $httpProvider) {
     .state('logout', {
       url:  '/logout',
       controller: 'LogoutCtrl as logout',
-    }
+    })
     
     .state('register', {
       url: '/register',

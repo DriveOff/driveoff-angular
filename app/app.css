@@ -289,6 +289,36 @@ ul.off-canvas-list li a {
   background-image: url(assets/steering-wheel_2000x1333.jpg);
 }
 
+@media only screen and (max-width: 240px) {
+  .home .main-section {
+    background-image: url(assets/girl-and-car_240x160.jpg);
+  }
+
+  .login .main-section, .register .main-section {
+    background-image: url(assets/steering-wheel_240x160.jpg);
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .home .main-section {
+    background-image: url(assets/girl-and-car_480x320.jpg);
+  }
+
+  .login .main-section, .register .main-section {
+    background-image: url(assets/steering-wheel_480x320.jpg);
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .home .main-section {
+    background-image: url(assets/girl-and-car_1024x682.jpg);
+  }
+
+  .login .main-section, .register .main-section {
+    background-image: url(assets/steering-wheel_1024x682.jpg);
+  }
+}
+
 .form-logo {
   display: block;
   max-width: 200px;

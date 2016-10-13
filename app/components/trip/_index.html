@@ -2,11 +2,11 @@
 
 <h2 class="text-center trip-car"><i class="fa fa-truck"></i><br /></h2>
 <h2 class="text-center trip-status">{{myTrip.service.status}}</h2>
-<div class="spinner"></div>
+<div class="spinner" ng-show="myTrip.service.status == 'driving safely...'"></div>
 
-<ul ng-show="{{myTrip.service.status == 'finished'}}">
-  <li>myTrip.minutes</li>
-  <li>myTrip.distance</li>
+<ul class="text-center trip-final" ng-show="myTrip.service.status == 'finished'">
+  <li><i class="fa fa-car"></i> {{ myTrip.service.minutes }} minutes</li>
+  <li><i class="fa fa-clock-o"></i> {{ myTrip.service.miles }} miles</li>
 </ul>
 <div class="text-center margin30">
   <button ng-click="myTrip.beginTrip();" class="large">Begin Trip</button>

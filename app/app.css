@@ -309,6 +309,10 @@ ul.off-canvas-list li a {
 
 /* Trip */
 
+.trip-final li {
+  list-style-type: none;
+}
+
 h2.trip-car, .dark h2.trip-car{
   margin-top: 2rem;
   color: #abebc6;

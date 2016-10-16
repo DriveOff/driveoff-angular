@@ -27,7 +27,6 @@ function($stateProvider, $urlRouterProvider, $httpProvider) {
       }
     })
 
-
     .state('rewards', {
       url: '/rewards',
       templateUrl: 'components/rewards/_index.html',
@@ -75,14 +74,12 @@ function($stateProvider, $urlRouterProvider, $httpProvider) {
 
     $urlRouterProvider.otherwise('/page-not-found');
  
- // when authentication is working, this is used to append authentication token with every request
- // also redirects to login
-    $httpProvider.interceptors.push('AuthInterceptor');
+ 
     
 }]).
   run(function($rootScope, $location) {
     $rootScope.$watch(function() {
-      console.log("works");
+
     /* Add class to body */
       var page = $location.path();
       if (page == '') {
@@ -117,9 +114,3 @@ function($stateProvider, $urlRouterProvider, $httpProvider) {
       $window.resize(pushFooterDown);
   })
 });
-
-Main.config([
-  "$httpProvider", function($httpProvider) {
-    $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');
-  }
-]);

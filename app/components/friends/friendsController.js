@@ -1,7 +1,7 @@
 // Controller for the Friends page
-Main.controller('FriendsCtrl', ['friendsPromise', 'findFriendsFactory', function (friendsPromise, findFriendsFactory) {
+Main.controller('FriendsCtrl', ['friendsFactory', 'findFriendsFactory', function (friendsFactory, findFriendsFactory) {
   this.test = "Hello World!";
-  this.friends = friendsPromise.data;
+  this.friends = friendsFactory.friends;
   this.findFriends = findFriendsFactory.findFriends;
   this.pointsAll = false;
   this.points = "points_all_time"

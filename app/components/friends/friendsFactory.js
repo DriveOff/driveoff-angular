@@ -26,9 +26,9 @@ function friendsFactory($http, $q){
   //
   // returns the promise
   me.fetchFriends = function(){
-    return $http.get(getURL).success(function(data) {
-      if (!data.error){
-        me.friends = data;
+    return $http.get(getURL).success(function(response) {
+      if (!response.error){
+        me.friends = response;
       }
     }); 
   }

@@ -8,7 +8,7 @@ function findFriendsFactory($http, $q) {
     friends: []
   }
   
-  var getURL = 'www.google.com';
+  var getURL = 'https://driveoff.herokuapp.com/users';
   
   // checks if the reps have already been fetched; if not, fetches them
   //

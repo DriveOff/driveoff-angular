@@ -8,8 +8,8 @@ function friendsFactory($http, $q){
     friends: []
   }
   
-  var getURL = 'http://localhost:8000'
-  // var getURL = 'https://driveoff.herokuapp.com/users';
+  // var getURL = 'http://localhost:8000'
+  var getURL = 'https://driveoff.herokuapp.com/users';
   // var getURL = 'data/friends.json';
   
   // checks if the reps have already been fetched; if not, fetches them

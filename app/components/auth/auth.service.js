@@ -1,7 +1,8 @@
 function Auth($http, $sessionStorage) {
   
   // var API_URL = 'https://driveoff.herokuapp.com'
-  var API_URL = 'http://localhost:3000'
+  var API_URL = 'http://localhost:3000';
+
   return {
     isAuthenticated: function() {
       return $sessionStorage.auth_token;

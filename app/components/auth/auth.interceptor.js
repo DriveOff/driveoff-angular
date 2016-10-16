@@ -15,6 +15,7 @@ function AuthInterceptor($q, $injector, $sessionStorage) {
 
         return config;
       },
+      
       responseError: function(response) {
         if (response.status === 401 || response.status === 403) {
           delete $sessionStorage.auth_token;
